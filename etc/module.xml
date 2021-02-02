@@ -1,4 +1,14 @@
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
-    <module name="MageSuite_ExtendedRecaptcha" setup_version="1.0.0"/>
+    <module name="MageSuite_ExtendedRecaptcha" setup_version="1.0.0">
+        <sequence>
+            <module name="Magento_Catalog"/>
+            <module name="Magento_ReCaptchaUser"/>
+            <module name="Magento_ReCaptchaContact"/>
+            <module name="Magento_ReCaptchaCustomer"/>
+            <module name="Magento_ReCaptchaReview"/>
+            <module name="Magento_ReCaptchaSendFriend"/>
+            <module name="Magento_ReCaptchaFrontendUi"/>
+        </sequence>
+    </module>
 </config>

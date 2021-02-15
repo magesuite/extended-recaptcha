@@ -9,14 +9,16 @@ declare(strict_types=1);
 
 /** @var $viewModel \MageSuite\ExtendedRecaptcha\ViewModel\ReCaptcha */
 $viewModel = $block->getViewModel();
+$recaptchaFor = $block->getRecaptchaFor();
+$isInvisibleRecaptcha = $viewModel->isInvisibleRecaptcha($recaptchaFor);
 ?>
 
-<div class="cs-google-recaptcha-note cs-google-recaptcha-note--<?= $block->getRecaptchaFor() ?>">
-    <div class="field-recaptcha" id="<?= /* @noEscape */ $block->getRecaptchaId() ?>-container" data-bind="scope:'<?= /* @noEscape */ $block->getRecaptchaId() ?>'">
+<div class="cs-google-recaptcha cs-google-recaptcha--<?= $block->getRecaptchaFor() ?>">
+    <div class="field-recaptcha cs-google-recaptcha__badge <?= $isInvisibleRecaptcha ? 'cs-google-recaptcha__badge--invisible' : '';?>" id="<?= /* @noEscape */ $block->getRecaptchaId() ?>-container" data-bind="scope:'<?= /* @noEscape */ $block->getRecaptchaId() ?>'">
         <!-- ko template: getTemplate() --><!-- /ko -->
     </div>
-    <?php if ($viewModel->getRecaptchaNote()): ?>
-    <span class="cs-google-recaptcha-note__text">
+    <?php if ($isInvisibleRecaptcha && $viewModel->isRecaptchaCustomNoteEnabled()): ?>
+    <span class="cs-google-recaptcha__note">
         <?= $viewModel->getRecaptchaNote();?>
     </span>
     <?php endif; ?>

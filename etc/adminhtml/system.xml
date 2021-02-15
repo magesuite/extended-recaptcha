@@ -7,9 +7,14 @@
                 <field id="custom_note_enabled" translate="label" type="select" sortOrder="1200" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Enable Custom Captcha Note</label>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <frontend_class>cs-csfeature__logo</frontend_class>
+                    <comment>
+                        <![CDATA[Custom note will work only for "invisible" recaptcha types and will replace default badge.]]>
+                    </comment>
                 </field>
                 <field id="custom_note_text" translate="label" type="textarea" sortOrder="1300" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Captcha Note</label>
+                    <frontend_class>cs-csfeature__logo</frontend_class>
                 </field>
             </group>
         </section>

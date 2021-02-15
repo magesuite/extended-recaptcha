@@ -7,18 +7,37 @@ class ReCaptcha implements \Magento\Framework\View\Element\Block\ArgumentInterfa
      * @var \MageSuite\ExtendedRecaptcha\Helper\Configuration
      */
     protected $configuration;
+    /**
+     * @var \Magento\ReCaptchaUi\Model\CaptchaTypeResolverInterface
+     */
+    protected $captchaTypeResolver;
 
-    public function __construct(\MageSuite\ExtendedRecaptcha\Helper\Configuration $configuration)
-    {
+    public function __construct(
+        \MageSuite\ExtendedRecaptcha\Helper\Configuration $configuration,
+        \Magento\ReCaptchaUi\Model\CaptchaTypeResolverInterface $captchaTypeResolver
+    ) {
         $this->configuration = $configuration;
+        $this->captchaTypeResolver = $captchaTypeResolver;
+    }
+
+    public function isRecaptchaCustomNoteEnabled()
+    {
+        return $this->configuration->isRecaptchaCustomNoteEnabled();
     }
 
     public function getRecaptchaNote()
     {
-        if (!$this->configuration->isRecaptchaCustomNoteEnabled()) {
-            return null;
+        return $this->configuration->getRecaptchaCustomNote();
+    }
+
+    public function isInvisibleRecaptcha($key)
+    {
+        $recaptchaType = $this->captchaTypeResolver->getCaptchaTypeFor($key);
+
+        if ($recaptchaType != 'recaptcha') {
+            return true;
         }
 
-        return $this->configuration->getRecaptchaCustomNote();
+        return false;
     }
 }

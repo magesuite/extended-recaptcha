@@ -3,7 +3,7 @@
         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
     <system>
         <section id="recaptcha_frontend">
-            <group id="type_for">
+            <group id="type_for" showInStore="1">
                 <field id="custom_note_enabled" translate="label" type="select" sortOrder="1200" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Enable Custom Captcha Note</label>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>

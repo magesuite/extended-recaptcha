@@ -4,6 +4,19 @@
     <system>
         <section id="recaptcha_frontend">
             <group id="type_for" showInStore="1">
+                <field id="add_to_cart" translate="label" type="select" sortOrder="210" showInDefault="1"
+                       showInWebsite="1" showInStore="0" canRestore="1">
+                    <label>Enable for Add To Cart</label>
+                    <source_model>Magento\ReCaptchaAdminUi\Model\OptionSource\Type</source_model>
+                    <frontend_class>cs-csfeature__logo</frontend_class>
+                </field>
+                <field id="add_to_cart_protection_mode" translate="label" type="select" sortOrder="211" showInDefault="1"
+                       showInWebsite="0" showInStore="0" canRestore="1">
+                    <label>Add To Cart Protection Mode</label>
+                    <source_model>\MageSuite\ExtendedRecaptcha\Model\Config\Source\ProtectionMode</source_model>
+                    <frontend_class>cs-csfeature__logo</frontend_class>
+                    <comment><![CDATA[Use <b>Global</b> setting only under attack]]></comment>
+                </field>
                 <field id="custom_note_enabled" translate="label" type="select" sortOrder="1200" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Enable Custom Captcha Note</label>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>

@@ -9,7 +9,7 @@
 
         <referenceContainer name="product.info.form.content">
             <block class="MageSuite\ExtendedRecaptcha\Block\Product\View\ReCaptcha"
-                   name="recaptcha"
+                   name="recaptcha.info.form.content"
                    after="product.info.addtocart"
                    template="MageSuite_ExtendedRecaptcha::recaptcha.phtml"
                    ifconfig="recaptcha_frontend/type_for/add_to_cart">
@@ -28,7 +28,7 @@
         </referenceContainer>
         <referenceBlock name="product.info.options.wrapper.bottom">
             <block class="MageSuite\ExtendedRecaptcha\Block\Product\View\ReCaptcha"
-                   name="recaptcha"
+                   name="recaptcha.options.wrapper.bottom"
                    after="product.info.addtocart"
                    template="MageSuite_ExtendedRecaptcha::recaptcha.phtml"
                    ifconfig="recaptcha_frontend/type_for/add_to_cart">

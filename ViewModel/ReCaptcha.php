@@ -30,6 +30,11 @@ class ReCaptcha implements \Magento\Framework\View\Element\Block\ArgumentInterfa
         return $this->configuration->getRecaptchaCustomNote();
     }
 
+    public function isDeferredRecaptchaEnabled()
+    {
+        return $this->configuration->isDeferredRecaptchaEnabled();
+    }
+
     public function isInvisibleRecaptcha($key)
     {
         $recaptchaType = $this->captchaTypeResolver->getCaptchaTypeFor($key);

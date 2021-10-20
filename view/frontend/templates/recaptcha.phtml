@@ -11,9 +11,10 @@ declare(strict_types=1);
 $viewModel = $block->getViewModel();
 $recaptchaFor = $block->getRecaptchaFor();
 $isInvisibleRecaptcha = $viewModel->isInvisibleRecaptcha($recaptchaFor);
+$isDeferredRecaptchaEnabled = $viewModel->isDeferredRecaptchaEnabled($recaptchaFor);
 ?>
 
-<div class="cs-google-recaptcha cs-google-recaptcha--<?= $block->getRecaptchaFor() ?>">
+<div class="cs-google-recaptcha cs-google-recaptcha--<?= $recaptchaFor ?>" data-deferred-recaptcha="<?= $isDeferredRecaptchaEnabled ?>">
     <div class="field-recaptcha cs-google-recaptcha__badge <?= $isInvisibleRecaptcha ? 'cs-google-recaptcha__badge--invisible' : '';?>" id="<?= /* @noEscape */ $block->getRecaptchaId() ?>-container" data-bind="scope:'<?= /* @noEscape */ $block->getRecaptchaId() ?>'">
         <!-- ko template: getTemplate() --><!-- /ko -->
     </div>

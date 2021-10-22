@@ -33,8 +33,7 @@ define([
             _loadApi: function() {
                 var $container = $('#' + this.getReCaptchaId() + '-container');
                 var $parentForm = $container.parents('form');
-                var $parentEl = $container.parents('.cs-google-recaptcha');
-                var deferredRecaptcha = $parentEl.attr('data-deferred-recaptcha');
+                var deferredRecaptcha = $container.parents('.cs-google-recaptcha').attr('data-deferred-recaptcha');
 
                 if(deferredRecaptcha) {
                     var parentMethod = this._super.bind(this);

@@ -29,6 +29,14 @@
                     <label>Captcha Note</label>
                     <frontend_class>cs-csfeature__logo</frontend_class>
                 </field>
+                <field id="deferred_scripts_enabled" translate="label" type="select" sortOrder="1400" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Defer recaptcha scripts</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <frontend_class>cs-csfeature__logo</frontend_class>
+                    <comment>
+                        <![CDATA[To improve performace deffer loading of recaptcha scripts till any input in form is focused.]]>
+                    </comment>
+                </field>
             </group>
         </section>
     </system>

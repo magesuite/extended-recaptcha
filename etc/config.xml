@@ -5,7 +5,6 @@
             <type_for>
                 <custom_note_enabled>0</custom_note_enabled>
                 <add_to_cart_mode>product_attribute</add_to_cart_mode>
-                <deferred_scripts_enabled>0</deferred_scripts_enabled>
             </type_for>
         </recaptcha_frontend>
     </default>

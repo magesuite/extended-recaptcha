@@ -1,0 +1,13 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:MageSuite_Changelog:etc/changelog.xsd">
+    <module id="MageSuite_ExtendedRecaptcha" name="MageSuite_ExtendedRecaptcha">
+        <changelog>
+            <tag version="2.2.0" date="2023-01-19">
+                <entry>
+                    <type>FIX</type>
+                    <overview>Remove deffered recaptcha functionality as it is discouraged by official documentation and can cause errors</overview>
+                    <ticket_id>P2G-2077</ticket_id>
+                </entry>
+            </tag>
+        </changelog>
+    </module>
+</config>

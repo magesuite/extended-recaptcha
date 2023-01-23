@@ -26,28 +26,6 @@ define([
 
                 return this;
             },
-            /**
-             * Deffer loading recaptcha in case onsubmit attribute exists
-             * Set Deferred recaptcha settings in admin panel to true
-            */
-            _loadApi: function() {
-                var $container = $('#' + this.getReCaptchaId() + '-container');
-                var $parentForm = $container.parents('form');
-                var deferredRecaptcha = $container.parents('.cs-google-recaptcha').attr('data-deferred-recaptcha');
-
-                if(deferredRecaptcha) {
-                    var parentMethod = this._super.bind(this);
-
-                    var initializeRecaptcha = function() {
-                        $parentForm.off('hover, focus, touchstart', 'input, textarea', initializeRecaptcha);
-                        parentMethod();    
-                    };
-
-                    $parentForm.on('hover, focus, touchstart', 'input, textarea', initializeRecaptcha);
-                } else {
-                    this._super();
-                }
-            },
         });
     };
 });

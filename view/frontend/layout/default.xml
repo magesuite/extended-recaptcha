@@ -4,6 +4,8 @@
         <referenceBlock name="recaptcha-newsletter" template="MageSuite_ExtendedRecaptcha::recaptcha_newsletter.phtml">
             <arguments>
                 <argument name="view_model" xsi:type="object">MageSuite\ExtendedRecaptcha\ViewModel\ReCaptcha</argument>
+                <argument name="recaptcha_name" xsi:type="string">newsletter</argument>
+                <argument name="recaptcha_append_to" xsi:type="string">#newsletter-validate-detail</argument>
             </arguments>
         </referenceBlock>
     </body>

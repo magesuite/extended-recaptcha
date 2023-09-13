@@ -8,6 +8,14 @@
                     <ticket_id>P2G-2077</ticket_id>
                 </entry>
             </tag>
+            <tag version="2.3.0" date="2023-09-12">
+                <entry>
+                    <type>FIX</type>
+                    <overview>Add possibility to define target element for recaptcha through XML</overview>
+                    <ticket_id>NKD-3586</ticket_id>
+                    <description>Add recaptcha support for multiple newsletters on page</description>
+                </entry>
+            </tag>
         </changelog>
     </module>
 </config>

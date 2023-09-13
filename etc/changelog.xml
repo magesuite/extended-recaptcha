@@ -13,7 +13,6 @@
                     <type>FIX</type>
                     <overview>Add possibility to define target element for recaptcha through XML</overview>
                     <ticket_id>NKD-3586</ticket_id>
-                    <description>Add recaptcha support for multiple newsletters on page</description>
                 </entry>
             </tag>
         </changelog>
